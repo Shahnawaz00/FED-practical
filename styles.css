@@ -154,7 +154,7 @@ a {
 footer {
     background-color: #1B1947;
 }
-.footer-links ul {
+.footer-links {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
