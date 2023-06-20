@@ -1,0 +1,350 @@
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Lato', sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* navbar  */
+.navbar {
+    display: flex;
+    padding: 50px 0px;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transition: 0.3s ease;
+}
+.logo {
+    margin-left: 50px;
+}
+/* ul containing link items  */
+.nav-link-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.nav-link-list > li > a {
+    font-size: calc(12px + 0.6vw);
+    font-weight: 400;
+    padding: 20px 10px;
+    transition: 0.5s ease;
+}
+.nav-link-list > li > a:hover {
+    color: #9EBE53;
+    border-bottom: 2px solid #9EBE53;
+}
+/* button  */
+.book-button {
+    background-color: #9EBE53;
+    border-radius: 100px;
+    padding: 13px 25px;
+    color: white;
+    border: none;
+    font-size:  calc(11px + 0.6vw);
+    margin-left: 15px;
+    cursor: pointer;
+    background: linear-gradient(to right, white 50%, #9EBE53 50%);  background-size: 200% 100%;
+    background-position: right ;
+    transition: all .3s ease;
+}
+.book-button:hover {
+    background-position: left;
+    color: black;
+}
+/* hide hamburger menu  */
+.hamburger, .toggler {
+    display: none;
+}
+
+/* hero section */
+
+.hero {
+    background-image: url(./images/hero-image.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* div containing hero text  */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+/* hero title  */
+.hero-text > h1 {
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(40px + 5vw);
+    text-shadow: 0px 2px 20px rgba(24, 24, 24, 0.1);
+    white-space: nowrap;
+    transition: 0.5s ease;
+
+}
+
+/* hero desc  */
+.hero-text > p {
+    font-size: calc(12px + 1.5vw);
+    margin-bottom: 20px;
+    transition: 0.5s ease;
+
+}
+
+/* sectiion 1 */
+.section-1 {
+    display: flex;
+    align-items: center;
+    background-color: #EBE772    ;
+}
+
+/* div containing text  */
+.section-1-text {
+    width: 50%;
+}
+.section-1-text > p {
+    color: #1B1947    ;
+    font-size: calc(12px + 3.5vw);
+    font-weight: 700;
+    padding: 0 30% 0 15%;
+    visibility: hidden;
+}
+/* div containing image  */
+.section-1-img {
+    width: 50%;
+}
+
+.section-1-img > img {
+    width: 100%;
+}
+
+/* footer  */
+footer {
+    background-color: #1B1947;
+}
+.footer-links ul {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 3% 5%;
+   padding-bottom: 2% ;
+}
+
+.footer-links > li {
+    margin-right: 30px;
+    margin-bottom: 20px;
+    font-size: calc(12 + 1.5vw);
+}
+
+/* media queries  */
+
+/* adjust padding  */
+@media only screen and (max-width: 1100px) {
+    .nav-link-list {
+        padding: 0 50px;
+    }
+} 
+
+/* adjust font sizes, padding */
+@media only screen and (max-width: 1024px)  {
+    .nav-link-list {
+        padding: 0 20px;
+    }
+    .hero-text > h1 {
+        font-size: calc(40px + 3vw);
+    }
+    .hero-text > p {
+        font-size: calc(12px + 1.5vw);
+    }
+    .section-1-text > p {
+        font-size: calc(12px + 2.5vw);
+    }
+    
+    .footer-links {
+        padding: 3% 8% 1% 15%;
+    }
+    .footer-links > li {
+        font-size: calc(12px );
+    }
+}
+
+/* display hamburger menu  */
+@media only screen and (max-width: 950px) {
+
+    .navbar {
+        padding: 0;
+    }
+    .logo {
+        display: none;
+    }
+    /* checkbox  */
+    .toggler {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    /* hamburger  */
+    .hamburger {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        padding: 1rem;
+        background-color: transparent ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+    }
+
+    .hamburger > div {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: white    ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    .hamburger > div:before, .hamburger > div:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 70%;
+        height: 2px;
+        background: inherit;
+    }
+    .hamburger > div:after {
+        top: 10px;
+    }
+
+    /* toggle the menu  */
+
+    /* hamburger animations  */
+    .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+    .toggler:checked + .hamburger > div:before, .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+        width: 100%;
+    }
+    /* show menu   */
+    .toggler:checked ~ .nav-link-list {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-link-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 10px 0;
+        background-color: #1B1947;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .nav-link-list > li  {
+        font-size: 20px;
+        padding: 10px 0px;
+        transition: 0.5s ease;
+    }
+}
+
+/* adjust font sizes, padding, and section 1 layout */
+@media only screen and (max-width: 650px){
+    .hero-text > h1 {
+        font-size: calc(40px + 3vw);
+        white-space: normal;
+    }
+    .hero-text > p {
+        font-size: calc(12px + 1vw);
+    }
+    .section-1 {
+        flex-direction: column;
+    }
+    .section-1-text {
+        width:100%;
+    }
+    .section-1-img {
+        width: 100%;
+    }
+    .section-1-text > p {
+        padding: 13% 25% 13% 10%;
+    }
+    .footer-links {
+        padding: 8% 8% 6% 15%;
+    }
+
+    
+}
+
+/* keyframes */
+
+/* slide in from left  */
+@keyframes slide {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+
+
+
