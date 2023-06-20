@@ -300,6 +300,10 @@ footer {
         padding: 10px 0px;
         transition: 0.5s ease;
     }
+
+    .book-button {
+        margin-left: 0;
+    }
 }
 
 /* adjust font sizes, padding, and section 1 layout */
